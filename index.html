@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heir Advocacy Institute | Understanding Heir Advocacy</title>
-    <meta name="description" content="The definitive resource for understanding heir advocacy. Learn when you need an heir advocate, how to choose one, and your rights as a beneficiary.">
+    <title>Heir Advocacy Institute | Understanding Heir Advocacy Services</title>
+    <meta name="description" content="The definitive guide to heir advocacy. Learn what heir advocacy is, whether it's right for your situation, and how the industry works. Independent educational resource.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +15,8 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📜</text></svg>">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Heir Advocacy Institute">
-    <meta property="og:description" content="The definitive resource for understanding heir advocacy and beneficiary rights.">
+    <meta property="og:title" content="Heir Advocacy Institute — Understanding Heir Advocacy">
+    <meta property="og:description" content="The definitive guide to heir advocacy services. Learn what it is, whether it's right for you, and how the industry works.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://heiradvocacy.com">
     
@@ -30,6 +30,8 @@
             --white: #ffffff;
             --text: #2c2c2c;
             --text-light: #5a5a5a;
+            --green: #2d5a4a;
+            --red-light: #f8f4f4;
         }
         
         * {
@@ -89,13 +91,13 @@
         }
         
         .logo span {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 400;
             color: var(--text-light);
             display: block;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            margin-top: 0.25rem;
+            margin-top: 0.15rem;
         }
         
         .nav-links {
@@ -119,21 +121,20 @@
         .nav-cta {
             font-size: 0.875rem;
             font-weight: 500;
-            color: var(--navy);
+            color: var(--white) !important;
+            background: var(--navy);
             text-decoration: none;
             padding: 0.75rem 1.5rem;
-            border: 1px solid var(--navy);
             transition: all 0.3s ease;
         }
         
         .nav-cta:hover {
-            background: var(--navy);
-            color: var(--white);
+            background: var(--navy-light);
         }
         
         /* Hero */
         .hero {
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -179,190 +180,245 @@
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
             line-height: 1.8;
         }
         
-        /* Intro Section */
-        .intro {
-            padding: 5rem 2rem;
-            background: var(--white);
+        .hero-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
         }
         
-        .intro-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .intro h2 {
-            font-size: 2.5rem;
+        .hero-nav a {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             color: var(--navy);
-            margin-bottom: 1.5rem;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--navy);
+            transition: all 0.3s ease;
         }
         
-        .intro p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-        
-        .intro p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Definition Section */
-        .definition {
-            padding: 5rem 2rem;
+        .hero-nav a:hover {
             background: var(--navy);
             color: var(--white);
         }
         
-        .definition-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .definition h2 {
-            font-size: 2.25rem;
-            color: var(--gold);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .definition-text {
-            font-size: 1.25rem;
-            line-height: 1.9;
-            color: rgba(255,255,255,0.9);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .definition-quote {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.75rem;
-            font-style: italic;
-            color: var(--gold-light);
-            text-align: center;
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.15);
-        }
-        
-        /* When Section */
-        .when-section {
+        /* Section base */
+        section {
             padding: 5rem 2rem;
-            background: var(--cream);
         }
         
-        .when-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .when-content h2 {
-            font-size: 2.25rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
+        .section-header {
             text-align: center;
-        }
-        
-        .when-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 3rem;
         }
         
-        .scenarios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .scenario {
-            background: var(--white);
-            padding: 2rem;
-            border-left: 3px solid var(--gold);
-        }
-        
-        .scenario h3 {
-            font-size: 1.25rem;
+        .section-header h2 {
+            font-size: 2.25rem;
             color: var(--navy);
             margin-bottom: 1rem;
         }
         
-        .scenario p {
-            font-size: 0.95rem;
+        .section-header p {
+            font-size: 1.1rem;
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.8;
         }
         
-        /* How to Choose Section */
-        .choose-section {
-            padding: 5rem 2rem;
+        /* What Is Section */
+        .what-is {
             background: var(--white);
         }
         
-        .choose-content {
+        .what-is-content {
             max-width: 900px;
             margin: 0 auto;
         }
         
-        .choose-content h2 {
-            font-size: 2.25rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            text-align: center;
+        .definition-box {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem;
+            margin-bottom: 3rem;
         }
         
-        .choose-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-        
-        .criteria-list {
-            display: grid;
-            gap: 1.5rem;
-        }
-        
-        .criteria-item {
-            display: grid;
-            grid-template-columns: 3rem 1fr;
-            gap: 1.5rem;
-            align-items: start;
-        }
-        
-        .criteria-number {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 2rem;
+        .definition-box h3 {
+            font-size: 1.5rem;
             color: var(--gold);
-            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
         
-        .criteria-text h3 {
-            font-size: 1.25rem;
+        .definition-box p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .key-point {
+            padding: 1.5rem;
+            border-left: 3px solid var(--gold);
+            background: var(--cream);
+        }
+        
+        .key-point h4 {
+            font-size: 1.1rem;
             color: var(--navy);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         
-        .criteria-text p {
+        .key-point p {
             font-size: 0.95rem;
             color: var(--text-light);
             line-height: 1.7;
         }
         
+        /* Fit Section */
+        .fit-section {
+            background: var(--cream);
+        }
+        
+        .fit-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .fit-column {
+            background: var(--white);
+            padding: 2.5rem;
+        }
+        
+        .fit-column.good {
+            border-top: 4px solid var(--green);
+        }
+        
+        .fit-column.not-good {
+            border-top: 4px solid #8b7355;
+        }
+        
+        .fit-column h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .fit-column .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--cream);
+        }
+        
+        .fit-column ul {
+            list-style: none;
+        }
+        
+        .fit-column li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid var(--cream);
+        }
+        
+        .fit-column li:last-child {
+            border-bottom: none;
+        }
+        
+        .fit-column.good li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+        }
+        
+        .fit-column.not-good li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #8b7355;
+            font-weight: bold;
+        }
+        
+        /* Business Models Section */
+        .models-section {
+            background: var(--white);
+        }
+        
+        .models-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .model-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .model-card {
+            background: var(--cream);
+            padding: 2rem;
+        }
+        
+        .model-card h3 {
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .model-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: var(--navy);
+            padding: 0.35rem 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .model-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .model-card .detail {
+            font-size: 0.85rem;
+            color: var(--text);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+        
         /* Resources Section */
         .resources-section {
-            padding: 5rem 2rem;
-            background: var(--cream);
+            background: var(--navy);
+            color: var(--white);
         }
         
         .resources-content {
@@ -370,19 +426,12 @@
             margin: 0 auto;
         }
         
-        .resources-content h2 {
-            font-size: 2.25rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            text-align: center;
+        .resources-section .section-header h2 {
+            color: var(--white);
         }
         
-        .resources-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
+        .resources-section .section-header p {
+            color: rgba(255,255,255,0.7);
         }
         
         .resource-categories {
@@ -392,16 +441,17 @@
         }
         
         .resource-category {
-            background: var(--white);
+            background: rgba(255,255,255,0.05);
             padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
         .resource-category h3 {
             font-size: 1.25rem;
-            color: var(--navy);
+            color: var(--gold);
             margin-bottom: 1.25rem;
             padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
         }
         
         .resource-category ul {
@@ -409,10 +459,10 @@
         }
         
         .resource-category li {
-            font-size: 0.95rem;
-            color: var(--text-light);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
             padding: 0.5rem 0;
-            border-bottom: 1px solid var(--cream);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         
         .resource-category li:last-child {
@@ -421,27 +471,65 @@
         
         /* CTA Section */
         .cta-section {
-            padding: 5rem 2rem;
-            background: var(--navy);
+            background: var(--cream);
             text-align: center;
         }
         
         .cta-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
         .cta-content h2 {
             font-size: 2.25rem;
-            color: var(--white);
+            color: var(--navy);
             margin-bottom: 1rem;
         }
         
-        .cta-content p {
-            font-size: 1.125rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
+        .cta-content > p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
             line-height: 1.8;
+        }
+        
+        .featured-provider {
+            background: var(--white);
+            padding: 3rem;
+            border: 1px solid rgba(26,42,74,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .featured-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .featured-provider h3 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        
+        .featured-provider .tagline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .featured-provider p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-button {
@@ -450,32 +538,17 @@
             font-weight: 500;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            color: var(--navy);
-            background: var(--gold);
+            color: var(--white);
+            background: var(--navy);
             text-decoration: none;
             padding: 1.25rem 2.5rem;
             transition: all 0.3s ease;
         }
         
         .cta-button:hover {
-            background: var(--gold-light);
+            background: var(--navy-light);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .cta-note {
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.6);
-            margin-top: 1.5rem;
-        }
-        
-        .cta-note a {
-            color: var(--gold-light);
-            text-decoration: none;
-        }
-        
-        .cta-note a:hover {
-            text-decoration: underline;
+            box-shadow: 0 10px 30px rgba(26, 42, 74, 0.2);
         }
         
         /* Footer */
@@ -504,8 +577,8 @@
         }
         
         .footer-supporter {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
@@ -513,6 +586,7 @@
         .footer-supporter a {
             color: var(--gold);
             text-decoration: none;
+            font-weight: 500;
         }
         
         .footer-supporter a:hover {
@@ -531,13 +605,13 @@
                 display: none;
             }
             
-            .criteria-item {
+            .fit-grid {
                 grid-template-columns: 1fr;
-                gap: 0.5rem;
             }
             
-            .criteria-number {
-                font-size: 1.5rem;
+            .hero-nav {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -550,9 +624,10 @@
                 <span>Educational Resource</span>
             </a>
             <div class="nav-links">
-                <a href="#what-is">What Is Heir Advocacy</a>
-                <a href="#when-needed">When You Need One</a>
-                <a href="#how-to-choose">How to Choose</a>
+                <a href="#what-is">What Is It</a>
+                <a href="#who-its-for">Who It's For</a>
+                <a href="#business-models">How It Works</a>
+                <a href="#resources">Resources</a>
                 <a href="https://heiradvocate.com" class="nav-cta" target="_blank">Find an Advocate</a>
             </div>
         </nav>
@@ -560,189 +635,162 @@
     
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-eyebrow">An Educational Resource</p>
+            <p class="hero-eyebrow">An Independent Educational Resource</p>
             <h1>Understanding Heir Advocacy</h1>
             <p class="hero-subtitle">
-                A comprehensive guide to heir advocacy—what it is, when you need it, 
-                and how to protect your inheritance rights during estate administration.
+                Everything you need to know about heir advocacy services—what they are, 
+                whether they're right for your situation, and how the industry works.
             </p>
+            <div class="hero-nav">
+                <a href="#what-is">What Is Heir Advocacy?</a>
+                <a href="#who-its-for">Is It Right for Me?</a>
+                <a href="#business-models">How It Works</a>
+            </div>
         </div>
     </section>
     
-    <section class="intro">
-        <div class="intro-content">
-            <h2>Protecting Beneficiary Interests</h2>
-            <p>
-                Estate administration is complex. When a loved one passes, the transfer of wealth 
-                involves legal proceedings, asset valuations, creditor claims, and distribution decisions—
-                all handled by executors or administrators who may have their own interests at stake.
-            </p>
-            <p>
-                For beneficiaries of significant estates, independent oversight isn't a luxury. 
-                It's a prudent measure to ensure your inheritance is handled with the care and 
-                accuracy it deserves.
-            </p>
-        </div>
-    </section>
-    
-    <section class="definition" id="what-is">
-        <div class="definition-content">
-            <h2>What Is Heir Advocacy?</h2>
-            <p class="definition-text">
-                Heir advocacy is a professional service that provides independent oversight 
-                of estate administration on behalf of beneficiaries. An heir advocate works 
-                alongside legal counsel and fiduciaries to verify asset inventories, review 
-                valuations, examine accountings, and ensure proper distribution—all while 
-                protecting the beneficiary's interests throughout the process.
-            </p>
-            <p class="definition-quote">
-                "Most executors fulfill their duties with integrity. Heir advocacy 
-                provides the verification that protects everyone involved."
-            </p>
-        </div>
-    </section>
-    
-    <section class="when-section" id="when-needed">
-        <div class="when-content">
-            <h2>When Do You Need an Heir Advocate?</h2>
-            <p class="when-subtitle">
-                Consider engaging an heir advocate if you recognize any of these situations.
-            </p>
+    <section class="what-is" id="what-is">
+        <div class="what-is-content">
+            <div class="section-header">
+                <h2>What Is Heir Advocacy?</h2>
+                <p>Understanding the role of professional advocates in estate administration.</p>
+            </div>
             
-            <div class="scenarios">
-                <div class="scenario">
-                    <h3>Complex Estate Holdings</h3>
+            <div class="definition-box">
+                <h3>Definition</h3>
+                <p>
+                    <strong>Heir advocacy</strong> is a professional service that provides independent oversight 
+                    of estate administration on behalf of beneficiaries. An heir advocate works alongside—or in 
+                    some cases, in opposition to—executors, administrators, and fiduciaries to verify asset inventories, 
+                    review valuations, examine accountings, investigate potential hidden assets, and ensure proper 
+                    distribution according to the decedent's wishes and applicable law.
+                </p>
+            </div>
+            
+            <div class="key-points">
+                <div class="key-point">
+                    <h4>Independent Oversight</h4>
                     <p>
-                        Estates with real property, business interests, investment portfolios, 
-                        or holdings across multiple jurisdictions require specialized oversight 
-                        to ensure nothing is overlooked or undervalued.
+                        Heir advocates operate independently of the estate administration, providing 
+                        a check on executor decisions and ensuring beneficiary interests are protected.
                     </p>
                 </div>
-                
-                <div class="scenario">
-                    <h3>Family Dynamics</h3>
+                <div class="key-point">
+                    <h4>Asset Verification</h4>
                     <p>
-                        When the executor is also a beneficiary, or when there's a history 
-                        of family tension, independent oversight provides transparency 
-                        and helps prevent disputes.
+                        Services typically include reviewing inventory completeness, verifying valuations, 
+                        and investigating whether all assets have been properly disclosed.
                     </p>
                 </div>
-                
-                <div class="scenario">
-                    <h3>Unexpected Distribution</h3>
+                <div class="key-point">
+                    <h4>Beneficiary Representation</h4>
                     <p>
-                        If your inheritance seems significantly smaller than anticipated 
-                        given your knowledge of the decedent's assets, an advocate can 
-                        investigate and verify the accounting.
+                        Unlike estate attorneys who represent the estate itself, heir advocates 
+                        represent the individual beneficiary's interests throughout the process.
                     </p>
                 </div>
-                
-                <div class="scenario">
-                    <h3>Geographic Distance</h3>
+                <div class="key-point">
+                    <h4>Investigation Capabilities</h4>
                     <p>
-                        Beneficiaries who live far from where the estate is being administered 
-                        often benefit from having a local advocate who can attend hearings, 
-                        inspect properties, and monitor proceedings.
-                    </p>
-                </div>
-                
-                <div class="scenario">
-                    <h3>Lack of Communication</h3>
-                    <p>
-                        If the executor or administrator is not providing regular updates 
-                        or is unresponsive to reasonable inquiries, an advocate can 
-                        establish proper communication channels.
-                    </p>
-                </div>
-                
-                <div class="scenario">
-                    <h3>Timeline Concerns</h3>
-                    <p>
-                        Estate administration typically takes 12-18 months. Extended delays 
-                        without clear explanation may warrant professional investigation 
-                        into the cause.
+                        Many heir advocates have access to genealogical research, skip tracing, 
+                        asset searches, and forensic accounting resources.
                     </p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="choose-section" id="how-to-choose">
-        <div class="choose-content">
-            <h2>How to Choose an Heir Advocate</h2>
-            <p class="choose-subtitle">
-                Selecting the right advocate is crucial. Look for these qualifications.
-            </p>
+    <section class="fit-section" id="who-its-for">
+        <div class="fit-content">
+            <div class="section-header">
+                <h2>Is Heir Advocacy Right for You?</h2>
+                <p>Heir advocacy is a specialized service. Here's how to know if it fits your situation.</p>
+            </div>
             
-            <div class="criteria-list">
-                <div class="criteria-item">
-                    <span class="criteria-number">1</span>
-                    <div class="criteria-text">
-                        <h3>Estate Administration Experience</h3>
-                        <p>
-                            Your advocate should have deep familiarity with probate processes, 
-                            fiduciary duties, and estate accounting standards. Ask about their 
-                            background and how many estates they've overseen.
-                        </p>
-                    </div>
+            <div class="fit-grid">
+                <div class="fit-column good">
+                    <h3>Good Fit</h3>
+                    <p class="subtitle">Heir advocacy typically makes sense when:</p>
+                    <ul>
+                        <li>The estate involves substantial assets ($500K+ or complex holdings)</li>
+                        <li>You believe assets may be missing or undervalued</li>
+                        <li>The executor is also a beneficiary with competing interests</li>
+                        <li>There's a history of family conflict or estrangement</li>
+                        <li>The estate includes real property, business interests, or investments</li>
+                        <li>You received less than expected given what you know of the decedent's wealth</li>
+                        <li>Communication from the executor has been poor or evasive</li>
+                        <li>The administration is taking significantly longer than expected</li>
+                        <li>You're geographically distant and can't monitor proceedings</li>
+                        <li>There are blended family dynamics (stepparents, half-siblings)</li>
+                    </ul>
                 </div>
                 
-                <div class="criteria-item">
-                    <span class="criteria-number">2</span>
-                    <div class="criteria-text">
-                        <h3>Asset Valuation Capabilities</h3>
-                        <p>
-                            Complex estates require advocates who can properly evaluate real property, 
-                            business interests, investments, and personal property. Verify they have 
-                            access to qualified appraisers and valuation experts.
-                        </p>
-                    </div>
+                <div class="fit-column not-good">
+                    <h3>May Not Be a Fit</h3>
+                    <p class="subtitle">Heir advocacy may not be necessary when:</p>
+                    <ul>
+                        <li>The estate is straightforward with transparent administration</li>
+                        <li>You have no specific concerns about the executor's conduct</li>
+                        <li>The estate value is modest (under $100K with simple assets)</li>
+                        <li>Family relationships are healthy and communication is open</li>
+                        <li>A professional fiduciary (bank, trust company) is administering</li>
+                        <li>You already have an estate attorney representing your interests</li>
+                        <li>The estate has no real property or complex assets</li>
+                        <li>Administration is proceeding on a normal timeline with regular updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="models-section" id="business-models">
+        <div class="models-content">
+            <div class="section-header">
+                <h2>How Heir Advocacy Services Work</h2>
+                <p>Understanding the common business models in the heir advocacy industry.</p>
+            </div>
+            
+            <div class="model-cards">
+                <div class="model-card">
+                    <span class="model-tag">Most Common</span>
+                    <h3>Contingency Model</h3>
+                    <p>
+                        The advocate is paid a percentage (typically 25-40%) of any additional 
+                        assets recovered or value gained beyond the initial distribution. 
+                        No recovery means no fee.
+                    </p>
+                    <p class="detail">
+                        <strong>Best for:</strong> Beneficiaries who suspect significant hidden assets 
+                        but can't afford upfront costs. Aligns advocate incentives with results.
+                    </p>
                 </div>
                 
-                <div class="criteria-item">
-                    <span class="criteria-number">3</span>
-                    <div class="criteria-text">
-                        <h3>Investigation Resources</h3>
-                        <p>
-                            Hidden assets don't reveal themselves. Effective advocates have access 
-                            to genealogical research, skip tracing, and forensic accounting when needed.
-                        </p>
-                    </div>
+                <div class="model-card">
+                    <span class="model-tag">Traditional</span>
+                    <h3>Hourly / Flat Fee</h3>
+                    <p>
+                        The advocate charges hourly rates ($150-400/hour) or flat project fees 
+                        for specific services like asset searches, accounting reviews, or 
+                        representation at hearings.
+                    </p>
+                    <p class="detail">
+                        <strong>Best for:</strong> Beneficiaries who need specific, defined services 
+                        or ongoing oversight regardless of recovery outcome.
+                    </p>
                 </div>
                 
-                <div class="criteria-item">
-                    <span class="criteria-number">4</span>
-                    <div class="criteria-text">
-                        <h3>Professional Network</h3>
-                        <p>
-                            Look for advocates who work collaboratively with estate attorneys, 
-                            CPAs, and other professionals—not those who operate in isolation.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="criteria-item">
-                    <span class="criteria-number">5</span>
-                    <div class="criteria-text">
-                        <h3>Clear Fee Structure</h3>
-                        <p>
-                            Understand how the advocate charges—hourly, flat fee, or contingency. 
-                            Reputable advocates provide clear engagement terms in writing before 
-                            beginning work.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="criteria-item">
-                    <span class="criteria-number">6</span>
-                    <div class="criteria-text">
-                        <h3>Discretion and Professionalism</h3>
-                        <p>
-                            Estate matters are private. Your advocate should maintain strict 
-                            confidentiality and conduct themselves with the professionalism 
-                            appropriate to sensitive family matters.
-                        </p>
-                    </div>
+                <div class="model-card">
+                    <span class="model-tag">Hybrid</span>
+                    <h3>Retainer + Success Fee</h3>
+                    <p>
+                        A combination model with a modest upfront retainer covering initial 
+                        investigation, plus a reduced contingency percentage on any recovery. 
+                        Balances risk between parties.
+                    </p>
+                    <p class="detail">
+                        <strong>Best for:</strong> Complex situations where both parties want 
+                        skin in the game but investigation costs are substantial.
+                    </p>
                 </div>
             </div>
         </div>
@@ -750,20 +798,21 @@
     
     <section class="resources-section" id="resources">
         <div class="resources-content">
-            <h2>Educational Resources</h2>
-            <p class="resources-subtitle">
-                Knowledge is your first line of protection. Explore these topics.
-            </p>
+            <div class="section-header">
+                <h2>Educational Resources</h2>
+                <p>Deepen your understanding of estate administration and beneficiary rights.</p>
+            </div>
             
             <div class="resource-categories">
                 <div class="resource-category">
                     <h3>Beneficiary Rights</h3>
                     <ul>
                         <li>Your right to an estate accounting</li>
-                        <li>Requesting asset inventories</li>
-                        <li>Understanding fiduciary duties</li>
-                        <li>Challenging executor decisions</li>
-                        <li>Removing a problematic executor</li>
+                        <li>Requesting complete asset inventories</li>
+                        <li>Understanding executor fiduciary duties</li>
+                        <li>Challenging distributions and decisions</li>
+                        <li>Petitioning for executor removal</li>
+                        <li>Statute of limitations on claims</li>
                     </ul>
                 </div>
                 
@@ -771,8 +820,9 @@
                     <h3>Estate Administration</h3>
                     <ul>
                         <li>The probate process explained</li>
-                        <li>Timeline expectations</li>
+                        <li>Typical administration timelines</li>
                         <li>Common causes of delay</li>
+                        <li>Reading an estate accounting</li>
                         <li>Distribution procedures</li>
                         <li>Final accounting requirements</li>
                     </ul>
@@ -781,40 +831,50 @@
                 <div class="resource-category">
                     <h3>Asset Discovery</h3>
                     <ul>
-                        <li>Common hidden asset types</li>
+                        <li>Common types of hidden assets</li>
                         <li>Real property research methods</li>
-                        <li>Financial account searches</li>
+                        <li>Financial account investigations</li>
                         <li>Business interest valuation</li>
                         <li>Personal property inventories</li>
+                        <li>Digital asset considerations</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="cta-section">
+    <section class="cta-section" id="find-advocate">
         <div class="cta-content">
-            <h2>Ready to Speak with an Advocate?</h2>
+            <h2>Ready to Speak with a Professional?</h2>
             <p>
-                If you're a beneficiary seeking professional oversight of an estate, 
-                consultation with a qualified heir advocate can help you understand 
-                your options and protect your interests.
+                If you're a beneficiary with concerns about an estate, a consultation with 
+                a qualified heir advocate can help you understand your options and determine 
+                the best path forward for your specific situation.
             </p>
-            <a href="https://heiradvocate.com" class="cta-button" target="_blank">Find an Heir Advocate</a>
-            <p class="cta-note">
-                We recommend <a href="https://heiradvocate.com" target="_blank">Heir Advocate</a>, 
-                a leading firm specializing in beneficiary representation and estate oversight.
-            </p>
+            
+            <div class="featured-provider">
+                <p class="featured-tag">Featured Provider</p>
+                <h3>Heir Advocate</h3>
+                <p class="tagline">The #1 leading heir advocacy firm in the United States</p>
+                <p>
+                    Specializing in high-value estate oversight, hidden asset recovery, and 
+                    beneficiary representation. Whether you suspect irregularities or simply 
+                    want independent verification, Heir Advocate brings expertise to situations 
+                    just like yours.
+                </p>
+                <a href="https://heiradvocate.com" class="cta-button" target="_blank">Request a Free Consultation</a>
+            </div>
         </div>
     </section>
     
     <footer>
         <div class="footer-content">
             <p class="footer-brand">Heir Advocacy Institute</p>
-            <p class="footer-tagline">Education and resources for beneficiaries navigating estate administration.</p>
+            <p class="footer-tagline">Independent education and resources for estate beneficiaries.</p>
             
             <p class="footer-supporter">
-                <a href="https://heiradvocate.com" target="_blank">Heir Advocate</a> is a proud supporter of heir advocacy education.
+                This educational resource is supported by <a href="https://heiradvocate.com" target="_blank">Heir Advocate</a>, 
+                a proud advocate for beneficiary education and transparency in estate administration.
             </p>
             
             <p class="footer-legal">
